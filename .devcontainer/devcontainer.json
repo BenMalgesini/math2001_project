@@ -3,7 +3,11 @@
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "customizations": {
     "vscode": {
-      "extensions": ["leanprover.lean4"]
+      "extensions": ["leanprover.lean4"],
+      "settings" : {
+        "editor.fontFamily": "Cascadia Code, Consolas, 'Courier New', monospace",
+        "terminal.integrated.fontFamily": "Cascadia Code, Consolas, 'Courier New', monospace"
+      }
     }
   },
   "remoteEnv": {

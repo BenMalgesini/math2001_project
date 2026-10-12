@@ -6,7 +6,6 @@ theorem succ_plus ( n : ℕ )
   induction m using ℕ.rec
   case zero =>
     unfold plus
-    rewrite[zero_plus]
     rfl
   case succ m ih =>
     unfold plus

@@ -4,5 +4,21 @@ defaultTargets=["natural_numbers"]
 
 [[lean_lib]]
 name = "natural_numbers"
-roots = ["natural_numbers"]
+roots = [
+  "natural_numbers",
+  "zero_plus",
+  "succ_plus",
+  "plus_zero",
+  "plus_succ",
+  "plus_comm",
+  "plus_assoc",
+  "zero_times",
+  "succ_times",
+  "times_zero",
+  "times_succ",
+  "times_comm",
+  "times_right_distrib",
+  "times_left_distrib",
+  "times_assoc",
+]
 

@@ -1,0 +1,8 @@
+name = "math2001_project"
+version = "0.0.0"
+defaultTargets=["natural_numbers"]
+
+[[lean_lib]]
+name = "natural_numbers"
+roots = ["natural_numbers"]
+

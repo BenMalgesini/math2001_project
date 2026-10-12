@@ -1,0 +1,13 @@
+{
+  "name": "Lean 4 class project",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "customizations": {
+    "vscode": {
+      "extensions": ["leanprover.lean4"]
+    }
+  },
+  "remoteEnv": {
+    "PATH": "${containerEnv:PATH}:${containerEnv:HOME}/.elan/bin"
+  },
+  "postCreateCommand": "bash .devcontainer/install-lean.sh"
+}

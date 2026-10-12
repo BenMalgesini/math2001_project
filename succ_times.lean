@@ -1,5 +1,5 @@
 import natural_numbers
 
 theorem succ_times ( m n : ℕ )
-: m.succ * n = n + m * n := by
-  sorry
+: times m.succ n = n + times m n := by
+  rfl

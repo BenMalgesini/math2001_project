@@ -9,4 +9,4 @@ theorem plus_zero ( m : ℕ )
   case succ m ih =>
     unfold plus
     rewrite [ih]
-   rfl
+    rfl

@@ -10,13 +10,12 @@ theorem times_succ ( m n : ℕ )
 : m * n.succ = m + m * n := by
   induction m using ℕ.rec
   case zero =>
-    rewrite [zero_times, zero_times]
+    rewrite[zero_times, zero_times] /- get rid of eveyrhting multiplied by zero -/
     unfold plus
     rfl
   case succ m ih =>
-    rewrite [succ_times, succ_times]
-    rewrite [succ_plus, succ_plus]
-    rewrite [ih]
-    rewrite [plus_assoc, plus_assoc]
-    rewrite [plus_comm n m]
-    rfl
+    unfold times
+    rewrite[ih]
+    unfold plus
+    rewrite [plus_comm]
+    rewrite [plus_assoc m (m*n)]

@@ -8,9 +8,8 @@ theorem plus_comm ( m n : ℕ )
 : m + n = n + m := by
   induction m using ℕ.rec
   case zero =>
-    rewrite [zero_plus, plus_zero]
+    rewrite[zero_plus, plus_zero]
     rfl
   case succ m ih =>
-    rewrite [succ_plus, plus_succ]
-    rewrite [ih]
+    rewrite[succ_plus, plus_succ, ih]
     rfl

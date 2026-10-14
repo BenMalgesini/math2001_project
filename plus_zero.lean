@@ -1,7 +1,7 @@
 import natural_numbers
 
 theorem plus_zero ( m : ℕ )
-: plus m ℕ.zero = m := by
+: m + ℕ.zero = m := by
   induction m using ℕ.rec
   case zero =>
     unfold plus

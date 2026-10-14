@@ -1,4 +1,5 @@
 import natural_numbers
+
 import zero_plus
 
 theorem plus_succ ( m n : ℕ )

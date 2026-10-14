@@ -10,3 +10,4 @@ theorem plus_zero ( m : ℕ )
     unfold plus
     rewrite [ih]
     rfl
+

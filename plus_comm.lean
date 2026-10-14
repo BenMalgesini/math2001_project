@@ -1,8 +1,8 @@
 import natural_numbers
-import zero_plus
 import plus_zero
-import plus_succ
 import succ_plus
+import zero_plus
+import plus_succ
 
 theorem plus_comm ( m n : ℕ )
 : m + n = n + m := by

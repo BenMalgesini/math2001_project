@@ -6,4 +6,3 @@ theorem times_left_distrib ( m n p : ℕ )
 : m * ( n + p ) = m*n + m*p := by
   rewrite[times_comm,times_right_distrib,times_comm m n, times_comm p m]
   rfl
--- sometimes it feels good lol

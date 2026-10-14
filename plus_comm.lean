@@ -1,8 +1,8 @@
 import natural_numbers
-import plus_zero
-import succ_plus
 import zero_plus
+import plus_zero
 import plus_succ
+import succ_plus
 
 theorem plus_comm ( m n : ℕ )
 : m + n = n + m := by
@@ -10,7 +10,7 @@ theorem plus_comm ( m n : ℕ )
   case zero =>
     rewrite [zero_plus, plus_zero]
     rfl
-  case succ m ih=>
-      rewrite [succ_plus, plus_succ]
-      rewrite [ih]
-      rfl
+  case succ m ih =>
+    rewrite [succ_plus, plus_succ]
+    rewrite [ih]
+    rfl

@@ -18,4 +18,5 @@ theorem times_succ ( m n : ℕ )
     rewrite[ih]
     unfold plus
     rewrite [plus_comm]
-    rewrite [plus_assoc m (m*n)]
+    -- rewrite [plus_assoc m (m*n)]
+    sorry

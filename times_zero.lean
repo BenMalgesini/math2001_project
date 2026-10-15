@@ -1,4 +1,5 @@
 import natural_numbers
+import zero_times
 
 theorem times_zero ( m : ℕ )
 : m * ℕ.zero = ℕ.zero := by

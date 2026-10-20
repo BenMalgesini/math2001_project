@@ -2,7 +2,7 @@ import natural_numbers
 
 
 
-def choose (m n :ℕ) : ℕ  :=
+def choose : ℕ → ℕ → ℕ  :=
   sorry
 
 

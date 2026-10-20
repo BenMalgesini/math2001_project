@@ -3,6 +3,7 @@ import times_one
 
 theorem one_divides ( n : ℕ )
 : divides 1 n := by
-  unfold divides
-  apply Exists.intro n
-  exact times_one n
+    unfold divides
+    exists n
+    rewrite [times_one]
+    rfl

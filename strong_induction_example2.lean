@@ -16,7 +16,10 @@ private theorem trichotomy ( n : ℕ )
 : ( n = 0 ) ∨ ( n = 1 ) ∨ ( ∃ (m:ℕ), n = m.succ.succ )
 := by
   sorry
+
+
+
 example ( n : ℕ ) 
 : ( n % 3 ) = 0 ↔ ( F n % 2 ) = 0
 := by
-  sorry
+  induction n using strong_induction

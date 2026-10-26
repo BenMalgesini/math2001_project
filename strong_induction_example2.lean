@@ -22,4 +22,4 @@ private theorem trichotomy ( n : ℕ )
 example ( n : ℕ ) 
 : ( n % 3 ) = 0 ↔ ( F n % 2 ) = 0
 := by
-  induction n using strong_induction
+  sorry

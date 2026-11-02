@@ -36,17 +36,12 @@ theorem remainder_zero_or_one (n : ℕ)
 theorem even_succ_remainder_one (n : ℕ)
   : is_even n → n.succ % 2 = 1 := by
   intro hn
-  have hc := remainder_zero_or_one n
-  cases hc with
-  | inl hz =>
-      change
-        (if (n % 2).succ = 2 then 0
-         else (n % 2).succ) = 1
-      rw [hz]
-      rfl
-  | inr ho =>
-      have hodd := remainder_one_is_odd n ho
-      exact False.elim (hodd hn)
+  unfold is_even at hn
+  change
+    (if (n % 2).succ = 2 then 0
+     else (n % 2).succ) = 1
+  rw [hn]
+  rfl
 
 theorem odd_plus_even_is_odd (m n : ℕ)
 : is_odd m ∧ is_even n → is_odd (m + n)

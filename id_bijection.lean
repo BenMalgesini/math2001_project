@@ -15,4 +15,4 @@ theorem id_bijection { S : Type }
     intro x
     unfold id
     apply Exists.intro x
-    rflgit status
+    rfl

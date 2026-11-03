@@ -10,23 +10,36 @@ private def f : ℕ → ℕ
 
 example ( n : ℕ ) : f n + 1 = 2^n := by
   induction n using strong_induction
-  case ih n ih=>
-  cases n
-  case zero =>
-    decide
-  case succ n =>
-    unfold power
-    have a : f n + 1 = 2^n := by
-      have b := ih n
-      apply b
-      exact lt_succ n
-    rewrite [← a]
-    rewrite [times_left_distrib]
-    rewrite [f]
-    rewrite [show 2*1=2 by decide]
-    rewrite [← plus_assoc]
-    rewrite [show 1+1=2 by decide]
-    rfl
+  case ih n ih =>
+    cases n
+    case zero =>
+      unfold power
+      unfold f
+      rfl
+    case succ n =>
+      unfold power
+      unfold f
+      have a : f n + 1 = 2^n := by
+        have b := ih n
+        apply b
+        apply lt_succ
+      rewrite [<- a]
+      rewrite [times_left_distrib]
+      rewrite [show 2*1=2 by decide]
+      rewrite [<- plus_assoc]
+      rewrite [show 1+1=2 by decide]
+      rfl
 
 example ( n : ℕ ) : f n + 1 = 2^n := by
-  sorry
+  induction n
+  case zero =>
+    unfold f
+    unfold power
+    rfl
+  case succ n ih =>
+    unfold f
+    unfold power
+    rewrite [<- ih]
+    rewrite [<- plus_assoc]
+    rewrite [times_left_distrib]
+    rfl

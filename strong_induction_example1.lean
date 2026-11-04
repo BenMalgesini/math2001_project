@@ -39,4 +39,15 @@ example ( n : ℕ ) : f n + 1 = 2^n := by
 
 
 example ( n : ℕ ) : f n + 1 = 2^n := by
-  sorry
+  induction n
+  case zero =>
+    unfold f
+    unfold power
+    rfl
+  case succ n ih =>
+    unfold f
+    unfold power
+    rewrite [<- ih]
+    rewrite [<- plus_assoc]
+    rewrite [times_left_distrib]
+    rfl

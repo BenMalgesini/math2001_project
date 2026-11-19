@@ -5,9 +5,14 @@ theorem id_bijection { S : Type }
   unfold bijective
   apply And.intro
   case left =>
-    intro p q hpq
-    apply hpq
+    unfold injective
+    intro x y
+    intro h
+    unfold id at h
+    exact h
   case right =>
-    intro s
-    exists s
-    
+    unfold surjective
+    intro x
+    unfold id
+    apply Exists.intro x
+    rfl

@@ -25,11 +25,20 @@ example ( n : ℕ )
   induction n using strong_induction
   case ih n ih =>
   rcases trichotomy n with h|h|h
+  /-rcases does cases recursively
+  on the whole thing, otherwise
+  we would have to do cases on the
+  first and second ∨ -/
   · -- n = 0
+    /- · is just to help organize
+    and only focus on one case at a time-/
     rewrite [h]
     decide
-  · -- n = 1
+
+    sorry
+  · -- n =1
     rewrite [h]
     decide
-  · -- n ≥ 2
-    
+    sorry
+  · -- n = m + 2
+    sorry

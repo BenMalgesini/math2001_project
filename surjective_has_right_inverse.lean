@@ -6,12 +6,10 @@ theorem surjective_has_right_inverse { S T : Type } { f : S → T }
 := by
   intro h
   unfold surjective at h
-  let g (t : T) := choose (h t) -- h t : ∃ y, f y = t
-  -- let s ∈ S be an element
-  have hg (t : T) := choose_spec (h t)
-  -- such that f(s) = t
+  let g ( t: T ) := choose ( h t )
+  have hg (t:T) := choose_spec (h t)
   apply Exists.intro g
-  funext t -- for every input they have the same output
+  funext t
   unfold compose
   unfold id
   exact hg t

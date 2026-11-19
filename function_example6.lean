@@ -30,20 +30,26 @@ def f ( n : ℕ ) : ℕ_pos :=
 
 private theorem f_surj : surjective f := by
   unfold surjective
-  intro sn
-  cases sn with
-  | mk sn hn =>
-    cases sn with
-    | zero =>
-      unfold lt at hn
-      have h2 := hn.right
-      contradiction
-    | succ n =>
-      apply Exists.intro n
-      apply Subtype.ext
-      change n + 1 = n.succ
-      exact (succ_is_plus_one n).symm
-
+  intro x
+  have ⟨a, ha⟩ := x
+  cases a
+  case zero =>
+    unfold lt at ha
+    have ⟨hle, hne⟩ := ha
+    exfalso
+    apply hne
+    rfl
+  case succ k =>
+    apply Exists.intro k
+    apply Subtype.ext
+    change k + 1 = k.succ
+    have h : k + 1 = k.succ := by
+      change k + ℕ.succ ℕ.zero = ℕ.succ k
+      rewrite [plus_succ]
+      rewrite [plus_zero]
+      rfl
+    rewrite [h]
+    rfl
 
 def g ( x : ℕ_pos ) : ℕ := by
   have ⟨ a, ha ⟩ := x  /- this is how you break a subtype

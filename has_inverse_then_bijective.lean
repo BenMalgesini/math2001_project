@@ -9,16 +9,8 @@ theorem has_inverse_then_bijective { S T : Type }
   unfold bijective
   apply And.intro
   case left =>
-    unfold injective
-    intro a b fab
-    have h1 : g (f a) = g (f b) := congrArg g fab
-    have ha : g (f a) = a :=congrFun h_gf a
-    have hb : g (f b) = b :=congrFun h_gf b
-    rw [ha, hb] at h1
-    exact h1
+    apply compose_id_then_first_injective
+    exact h_gf
   case right =>
-    unfold surjective
-    intro t
-    apply Exists.intro (g t)
-    have fgt : f (g t) = t := congrFun h_fg t
-    exact fgt
+    apply compose_id_then_second_surjective
+    exact h_fg
